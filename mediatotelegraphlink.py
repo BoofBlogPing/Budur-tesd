@@ -6,7 +6,7 @@ from pyrogram import Client, filters
 from pyrogram.types import Message
 from telegraph import upload_file
 import os
-InlineKeyboardButton
+from pyrogram.types import InlineKeyboardButton
 
 teletips=Client(
     "MediaToTelegraphLink",
