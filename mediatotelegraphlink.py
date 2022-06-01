@@ -66,9 +66,9 @@ To generate links in **group chats**, add me to your supergroup and send the com
   #      except Exception as e:
  #           await text.edit_text(f"**❌ | File upload failed**\n\n<i>**Reason**: {e}</i>")
  #           os.remove(local_path) 
-            return         
-    except Exception:
-        pass                                           
+    #        return         
+#    except Exception:
+  #      pass                                           
 
 print("Bot is alive!")
 teletips.run()
