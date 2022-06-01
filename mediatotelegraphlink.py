@@ -39,9 +39,8 @@ buttons=(
                       [Button.url('Qurup 📣', 'https://t.me/DejavuGurup')],
 		      [Button.url('Kanal 🛠', 'https://t.me/DejavuSupport')],
                     ),
-                    link_preview=False
-                   )
-
+                    
+              
    
 #[
 #                    InlineKeyboardButton('Dəstək 🔔', url='https://t.me/DejavuTeam'),
