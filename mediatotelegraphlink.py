@@ -55,7 +55,7 @@ To generate links in **group chats**, add me to your supergroup and send the com
  #   try:
  #       text = await message.reply("Processing...")
   #      async def progress(current, total):
-            await text.edit_text(f"📥 Downloading media... {current * 100 / total:.1f}%")
+    #        await text.edit_text(f"📥 Downloading media... {current * 100 / total:.1f}%")
    #     try:
   #          location = f"./media/group/"
   #          local_path = await message.reply_to_message.download(location, progress=progress)
