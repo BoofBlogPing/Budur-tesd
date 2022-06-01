@@ -6,7 +6,7 @@ from pyrogram import Client, filters
 from pyrogram.types import Message
 from telegraph import upload_file
 import os
-from pyrogram.types import ReplyKeyboardMarkup 
+from telethon import Button
 
 teletips=Client(
     "MediaToTelegraphLink",
@@ -32,19 +32,16 @@ To generate links in **group chats**, add me to your supergroup and send the com
  
 
 
+buttons=(
+                   
+		      [Button.url('➕ Məni Qrupa Sal ➕', 'http://t.me/DejavuTaggerBot?startgroup=a')],
+                      [Button.url('Sahib 👨🏻‍💻', 'https://t.me/MUCVE_M')],
+                      [Button.url('Qurup 📣', 'https://t.me/DejavuGurup')],
+		      [Button.url('Kanal 🛠', 'https://t.me/DejavuSupport')],
+                    ),
+                    link_preview=False
+                   )
 
-reply_markup=InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton('Dəstək 🔔', url='https://t.me/DejavuTeam'),
-                    InlineKeyboardButton('Kanal 📢', url='https://t.me/DejavuSupport')
-                ],
-                [
-                    InlineKeyboardButton('Mənbə 🖥', url='https://t.me/DegGixM'),
-                    InlineKeyboardButton('Sahib 👨‍💻', url='https://t.me/Kunaldiwan')
-                ]
-            ]
-        ),
    
 #[
 #                    InlineKeyboardButton('Dəstək 🔔', url='https://t.me/DejavuTeam'),
