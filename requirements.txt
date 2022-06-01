@@ -1,3 +1,6 @@
 pyrogram
 tgcrypto
 telegraph
+telethon
+cryptg
+requests
