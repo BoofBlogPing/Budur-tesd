@@ -36,7 +36,7 @@ buttons=(
                     ),
    
          """
-    await teletips.send_message(message.chat.id, text, disable_web_page_preview=True)
+ #   await teletips.send_message(message.chat.id, text, disable_web_page_preview=True)
  
 
 
