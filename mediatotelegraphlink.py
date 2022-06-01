@@ -30,42 +30,42 @@ To generate links in **group chats**, add me to your supergroup and send the com
     await teletips.send_message(message.chat.id, text, disable_web_page_preview=True)
     
 
-@teletips.on_message(filters.media & filters.private)
-async def get_link_private(client, message):
-    try:
-        text = await message.reply("Processing...")
-        async def progress(current, total):
-            await text.edit_text(f"📥 Downloading media... {current * 100 / total:.1f}%")
-        try:
-            location = f"./media/private/"
-            local_path = await message.download(location, progress=progress)
-            await text.edit_text("📤 Uploading to Telegraph...")
-            upload_path = upload_file(local_path) 
-            await text.edit_text(f"**🌐 | Telegraph Link**:\n\n<code>https://telegra.ph{upload_path[0]}</code>")     
-            os.remove(local_path) 
-        except Exception as e:
-            await text.edit_text(f"**❌ | File upload failed**\n\n<i>**Reason**: {e}</i>")
-            os.remove(local_path) 
-            return                 
-    except Exception:
-        pass        
+#@teletips.on_message(filters.media & filters.private)
+#async def get_link_private(client, message):
+#    try:
+#        text = await message.reply("Processing...")
+ #       async def progress(current, total):
+ #           await text.edit_text(f"📥 Downloading media... {current * 100 / total:.1f}%")
+ #       try:
+  #          location = f"./media/private/"
+  #          local_path = await message.download(location, progress=progress)
+   #         await text.edit_text("📤 Uploading to Telegraph...")
+   #         upload_path = upload_file(local_path) 
+    #        await text.edit_text(f"**🌐 | Telegraph Link**:\n\n<code>https://telegra.ph{upload_path[0]}</code>")     
+   #         os.remove(local_path) 
+  #      except Exception as e:
+ #           await text.edit_text(f"**❌ | File upload failed**\n\n<i>**Reason**: {e}</i>")
+#            os.remove(local_path) 
+  #          return                 
+  #  except Exception:
+ #       pass        
 
-@teletips.on_message(filters.command('tl'))
-async def get_link_group(client, message):
-    try:
-        text = await message.reply("Processing...")
-        async def progress(current, total):
+#@teletips.on_message(filters.command('tl'))
+#async def get_link_group(client, message):
+ #   try:
+ #       text = await message.reply("Processing...")
+  #      async def progress(current, total):
             await text.edit_text(f"📥 Downloading media... {current * 100 / total:.1f}%")
-        try:
-            location = f"./media/group/"
-            local_path = await message.reply_to_message.download(location, progress=progress)
-            await text.edit_text("📤 Uploading to Telegraph...")
-            upload_path = upload_file(local_path) 
-            await text.edit_text(f"**🌐 | Telegraph Link**:\n\n<code>https://telegra.ph{upload_path[0]}</code>")     
-            os.remove(local_path) 
-        except Exception as e:
-            await text.edit_text(f"**❌ | File upload failed**\n\n<i>**Reason**: {e}</i>")
-            os.remove(local_path) 
+   #     try:
+  #          location = f"./media/group/"
+  #          local_path = await message.reply_to_message.download(location, progress=progress)
+  #          await text.edit_text("📤 Uploading to Telegraph...")
+ #           upload_path = upload_file(local_path) 
+ #           await text.edit_text(f"**🌐 | Telegraph Link**:\n\n<code>https://telegra.ph{upload_path[0]}</code>")     
+  #          os.remove(local_path) 
+  #      except Exception as e:
+ #           await text.edit_text(f"**❌ | File upload failed**\n\n<i>**Reason**: {e}</i>")
+ #           os.remove(local_path) 
             return         
     except Exception:
         pass                                           
