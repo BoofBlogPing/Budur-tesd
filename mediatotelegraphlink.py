@@ -6,6 +6,7 @@ from pyrogram import Client, filters
 from pyrogram.types import Message
 from telegraph import upload_file
 import os
+InlineKeyboardButton
 
 teletips=Client(
     "MediaToTelegraphLink",
@@ -29,7 +30,10 @@ To generate links in **group chats**, add me to your supergroup and send the com
             """
     await teletips.send_message(message.chat.id, text, disable_web_page_preview=True)
     
-
+[
+                    InlineKeyboardButton('Dəstək 🔔', url='https://t.me/DejavuTeam'),
+                    InlineKeyboardButton('Kanal 📢', url='https://t.me/DejavuSupport')
+                ],
 #@teletips.on_message(filters.media & filters.private)
 #async def get_link_private(client, message):
 #    try:
